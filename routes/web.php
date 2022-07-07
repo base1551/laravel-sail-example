@@ -19,6 +19,6 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard'); // ミドルウェアのverifiedを追加
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

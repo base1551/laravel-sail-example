@@ -47,6 +47,9 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
+        //登録完了メールの送信
+        // $user->registered($request->name);
+
         Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
